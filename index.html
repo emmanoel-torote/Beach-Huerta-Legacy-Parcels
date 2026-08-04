@@ -92,13 +92,20 @@ fbq('track', 'PageView');
   }
   .hero-bg{
     position:absolute; inset:0;
-    background-image:url('./images/beach-club-1.jpg');
+    background-image:url('./images/hero.jpg');
     background-size:cover; background-position:center 58%;
   }
   .hero-grad{
     position:absolute; inset:0;
     background:linear-gradient(180deg, rgba(26,22,17,.25) 0%, rgba(26,22,17,.15) 30%, rgba(26,22,17,.75) 100%);
   }
+  .hero-badge{
+    position:absolute; z-index:3; bottom:26px; right:32px;
+    font-size:10px; letter-spacing:.1em; text-transform:uppercase; font-weight:600;
+    color:rgba(244,238,234,.75); border:1px solid rgba(244,238,234,.3);
+    padding:6px 12px; background:rgba(26,22,17,.3);
+  }
+  @media(max-width:720px){.hero-badge{display:none;}}
   .hero-inner{
     position:relative; z-index:2; width:100%;
     padding:0 40px 90px; text-align:center;
@@ -398,6 +405,7 @@ fbq('track', 'PageView');
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grad"></div>
+  <div class="hero-badge">Imagen Ilustrativa</div>
   <div class="hero-inner">
     <div class="hero-eyebrow reveal">El Pescadero &middot; Baja California Sur</div>
     <h1 class="reveal">Beach &amp; Huerta<em>Legacy Parcels</em></h1>
@@ -526,7 +534,7 @@ fbq('track', 'PageView');
     <div class="terreno-head reveal">
       <div class="eyebrow">El Terreno Hoy</div>
       <h2>Antes de la visión, el sitio real.</h2>
-      <p>Fotografía actual de las tres parcelas — pendiente de carga.</p>
+      <p>Fotografía aérea reciente de cada parcela.</p>
     </div>
     <div class="terreno-grid reveal">
       <div class="terreno-slot"><img src="./images/terreno-01.jpg" alt="Fotografía actual de la Parcela 01" loading="lazy"><span>Parcela 01</span></div>
