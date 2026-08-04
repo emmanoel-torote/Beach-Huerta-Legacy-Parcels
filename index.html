@@ -19,31 +19,33 @@ fbq('track', 'PageView');
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --cream:#f4eeea;
-    --ink:#1a1611;
-    --blue:#0f509b;
-    --orange:#dd7447;
-    --sage:#54604a;
-    --sand:#cdbfa4;
-    --line: rgba(26,22,17,.12);
-    --line-on-dark: rgba(244,238,234,.18);
+    --cream:#F6F3ED;      /* Bone White — primary background */
+    --ink:#10293A;        /* Pacific Ink — headings, dark sections */
+    --blue:#10293A;       /* legacy var, mapped to Pacific Ink */
+    --orange:#B76643;     /* Terracotta — primary accent */
+    --sage:#485C42;       /* Huerta Green — secondary accent */
+    --sand:#E8DFD1;       /* Warm Sand — muted accent / secondary panels */
+    --charcoal:#242A2D;   /* Charcoal — body copy */
+    --line: rgba(36,42,45,.12);
+    --line-on-dark: rgba(246,243,237,.18);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
     background:var(--cream);
-    color:var(--ink);
-    font-family:'DM Sans', sans-serif;
+    color:var(--charcoal);
+    font-family:'Manrope', sans-serif;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
   h1,h2,h3,.serif{
     font-family:'Cormorant Garamond', serif;
     font-weight:400;
+    color:var(--ink);
   }
   a{color:inherit; text-decoration:none;}
   img{max-width:100%; display:block;}
@@ -63,7 +65,7 @@ fbq('track', 'PageView');
     transition:background .35s ease, padding .35s ease;
   }
   header.nav.scrolled{
-    background:rgba(244,238,234,.94);
+    background:rgba(246,243,237,.94);
     padding:18px 40px;
     box-shadow:0 1px 0 var(--line);
   }
@@ -74,15 +76,15 @@ fbq('track', 'PageView');
   header.nav.scrolled .nav-logo{color:var(--ink);}
   .nav-right{display:flex; align-items:center; gap:28px;}
   .nav-mls{font-size:10.5px; letter-spacing:.12em; color:rgba(255,255,255,.55); text-transform:uppercase;}
-  header.nav.scrolled .nav-mls{color:rgba(26,22,17,.45);}
+  header.nav.scrolled .nav-mls{color:rgba(36,42,45,.45);}
   .nav-cta{
     font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:600;
     color:#fff; border:1px solid rgba(255,255,255,.5); padding:10px 20px;
     transition:all .25s ease;
   }
-  header.nav.scrolled .nav-cta{color:var(--ink); border-color:rgba(26,22,17,.3);}
+  header.nav.scrolled .nav-cta{color:var(--ink); border-color:rgba(36,42,45,.3);}
   .nav-cta:hover{background:rgba(255,255,255,.12);}
-  header.nav.scrolled .nav-cta:hover{background:rgba(26,22,17,.06);}
+  header.nav.scrolled .nav-cta:hover{background:rgba(16,41,58,.06);}
 
   /* ---------- HERO ---------- */
   .hero{
@@ -97,13 +99,13 @@ fbq('track', 'PageView');
   }
   .hero-grad{
     position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(26,22,17,.25) 0%, rgba(26,22,17,.15) 30%, rgba(26,22,17,.75) 100%);
+    background:linear-gradient(180deg, rgba(16,41,58,.25) 0%, rgba(16,41,58,.15) 30%, rgba(16,41,58,.75) 100%);
   }
   .hero-badge{
     position:absolute; z-index:3; bottom:26px; right:32px;
     font-size:10px; letter-spacing:.1em; text-transform:uppercase; font-weight:600;
-    color:rgba(244,238,234,.75); border:1px solid rgba(244,238,234,.3);
-    padding:6px 12px; background:rgba(26,22,17,.3);
+    color:rgba(246,243,237,.75); border:1px solid rgba(246,243,237,.3);
+    padding:6px 12px; background:rgba(16,41,58,.3);
   }
   @media(max-width:720px){.hero-badge{display:none;}}
   .hero-inner{
@@ -112,16 +114,21 @@ fbq('track', 'PageView');
   }
   .hero-eyebrow{
     font-size:11px; text-transform:uppercase; letter-spacing:.32em; font-weight:600;
-    color:rgba(244,238,234,.75); margin-bottom:26px;
+    color:rgba(246,243,237,.75); margin-bottom:26px;
   }
   .hero-inner h1{
     font-size:clamp(48px, 9vw, 128px); line-height:.98; font-weight:400;
     letter-spacing:.01em;
   }
   .hero-inner h1 em{font-style:italic; color:var(--sand); display:block; font-size:.72em; margin-top:6px;}
+  .hero-subtitle{
+    font-family:'Manrope', sans-serif; font-weight:400; font-size:clamp(14px,1.3vw,17px);
+    color:rgba(246,243,237,.72); max-width:560px; margin:28px auto 0; line-height:1.6;
+    letter-spacing:.01em;
+  }
   .scroll-cue{
     position:absolute; z-index:2; bottom:28px; left:50%; transform:translateX(-50%);
-    width:1px; height:46px; background:rgba(244,238,234,.4);
+    width:1px; height:46px; background:rgba(246,243,237,.4);
     overflow:hidden;
   }
   .scroll-cue::after{
@@ -144,12 +151,12 @@ fbq('track', 'PageView');
   }
   .statbar-row div:first-child{border-left:none;}
   .statbar .num{
-    font-family:'Cormorant Garamond',serif; font-weight:400;
+    font-family:'Cormorant Garamond',serif; font-weight:400; color:var(--ink);
     font-size:clamp(24px,3vw,38px);
   }
   .statbar .lbl{
     font-size:10.5px; text-transform:uppercase; letter-spacing:.12em;
-    color:rgba(26,22,17,.5); margin-top:8px;
+    color:rgba(36,42,45,.5); margin-top:8px;
   }
   @media(max-width:720px){
     .statbar-row{grid-template-columns:repeat(2,1fr); row-gap:30px;}
@@ -165,7 +172,18 @@ fbq('track', 'PageView');
     max-width:920px; margin:24px auto 0;
   }
   .statement h2 em{font-style:italic; color:var(--orange);}
+  .statement-sub{
+    font-size:15px; line-height:1.7; color:var(--charcoal); opacity:.65;
+    max-width:520px; margin:26px auto 0;
+  }
   @media(max-width:720px){.statement{padding:90px 0;}}
+
+  /* ---------- CONCEPTUAL INTRO ---------- */
+  .concept-intro{padding:140px 0 90px; border-top:1px solid var(--line);}
+  .concept-intro-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:70px; align-items:start;}
+  .concept-intro h2{font-size:clamp(26px,2.8vw,34px); font-weight:400; margin-top:14px;}
+  .concept-intro p{font-size:14.5px; line-height:1.8; color:var(--charcoal); opacity:.68; max-width:460px;}
+  @media(max-width:860px){.concept-intro-grid{grid-template-columns:1fr; gap:26px;}}
 
   /* ---------- VISION BLOCKS ---------- */
   .vblock{
@@ -184,8 +202,8 @@ fbq('track', 'PageView');
   .vslide .vtag{
     position:absolute; z-index:2; top:28px; left:28px;
     font-size:10px; letter-spacing:.1em; text-transform:uppercase; font-weight:600;
-    color:rgba(244,238,234,.8); border:1px solid rgba(244,238,234,.35);
-    padding:6px 12px; background:rgba(26,22,17,.3);
+    color:rgba(246,243,237,.8); border:1px solid rgba(246,243,237,.35);
+    padding:6px 12px; background:rgba(16,41,58,.3);
   }
   .vslide-cta{
     background:var(--ink); display:flex; align-items:center; justify-content:center;
@@ -196,29 +214,29 @@ fbq('track', 'PageView');
     margin-bottom:22px;
   }
   .vcta-btn{
-    display:inline-block; border:1px solid rgba(244,238,234,.5); color:var(--cream);
+    display:inline-block; border:1px solid rgba(246,243,237,.5); color:var(--cream);
     font-size:11px; text-transform:uppercase; letter-spacing:.12em; font-weight:600;
     padding:13px 26px; transition:all .2s ease;
   }
-  .vcta-btn:hover{background:rgba(244,238,234,.1);}
+  .vcta-btn:hover{background:rgba(246,243,237,.1);}
   .vdots{
     position:absolute; z-index:3; bottom:22px; left:0; right:0;
     display:flex; justify-content:center; gap:8px;
   }
   .vdot{
-    width:6px; height:6px; border-radius:50%; background:rgba(244,238,234,.4);
+    width:6px; height:6px; border-radius:50%; background:rgba(246,243,237,.4);
     cursor:pointer; transition:background .2s, transform .2s; border:none; padding:0;
   }
   .vdot.active{background:var(--cream); transform:scale(1.3);}
   .varrow{
     position:absolute; z-index:3; top:50%; transform:translateY(-50%);
-    width:38px; height:38px; border-radius:50%; border:1px solid rgba(244,238,234,.4);
-    background:rgba(26,22,17,.3); color:var(--cream); font-size:15px;
+    width:38px; height:38px; border-radius:50%; border:1px solid rgba(246,243,237,.4);
+    background:rgba(16,41,58,.3); color:var(--cream); font-size:15px;
     display:flex; align-items:center; justify-content:center; cursor:pointer;
     opacity:0; transition:opacity .25s ease, background .2s ease;
   }
   .vimg:hover .varrow{opacity:1;}
-  .varrow:hover{background:rgba(26,22,17,.55);}
+  .varrow:hover{background:rgba(16,41,58,.55);}
   .varrow.prev{left:16px;} .varrow.next{right:16px;}
   @media(max-width:900px){.varrow{display:none;}}
   .vtext{
@@ -231,17 +249,21 @@ fbq('track', 'PageView');
     z-index:0; font-weight:400;
   }
   .vtext-inner{position:relative; z-index:1;}
-  .vtext h3{font-size:clamp(30px,3.4vw,46px); font-weight:400; margin-bottom:6px;}
+  .vtext .vref{
+    font-size:11px; text-transform:uppercase; letter-spacing:.18em; font-weight:600;
+    color:var(--orange); margin-bottom:12px;
+  }
+  .vtext h3{font-size:clamp(26px,2.9vw,38px); font-weight:400; margin-bottom:6px; line-height:1.15;}
   .vtext .vsub{
     font-size:12px; text-transform:uppercase; letter-spacing:.18em; font-weight:600; color:var(--sage);
     margin-bottom:22px;
   }
-  .vtext p{font-size:15.5px; line-height:1.7; color:rgba(26,22,17,.62); max-width:380px; margin-bottom:26px;}
+  .vtext p{font-size:15.5px; line-height:1.7; color:rgba(36,42,45,.62); max-width:380px; margin-bottom:26px;}
   .vtext .vsize{
     display:inline-block; font-size:11px; text-transform:uppercase; letter-spacing:.1em;
-    color:rgba(26,22,17,.45); border-top:1px solid var(--line); padding-top:14px;
+    color:rgba(36,42,45,.45); border-top:1px solid var(--line); padding-top:14px;
   }
-  .vtext .vsize b{color:var(--ink); font-family:'DM Sans'; font-weight:600; font-size:12px;}
+  .vtext .vsize b{color:var(--ink); font-family:'Manrope'; font-weight:600; font-size:12px;}
   @media(max-width:900px){
     .vblock, .vblock.reverse{flex-direction:column;}
     .vimg{min-height:56vh;}
@@ -249,11 +271,20 @@ fbq('track', 'PageView');
     .vtext .vnum{display:none;}
   }
 
+  /* ---------- MINI DISCLAIMER (after renders) ---------- */
+  .mini-disclaimer{
+    background:var(--sand); padding:26px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .mini-disclaimer p{
+    font-size:12px; line-height:1.7; color:var(--charcoal); opacity:.75; max-width:840px;
+    font-style:italic; font-family:'Cormorant Garamond',serif; font-size:15px;
+  }
+
   /* ---------- TERRENO HOY (real site photos) ---------- */
-  .terreno{padding:110px 0; border-bottom:1px solid var(--line);}
+  .terreno{padding:150px 0; border-bottom:1px solid var(--line);}
   .terreno-head{margin-bottom:44px;}
   .terreno-head h2{font-size:clamp(28px,3.2vw,40px); font-weight:400; margin-top:14px;}
-  .terreno-head p{font-size:14px; color:rgba(26,22,17,.55); margin-top:10px; max-width:460px;}
+  .terreno-head p{font-size:14px; color:rgba(36,42,45,.55); margin-top:10px; max-width:460px;}
   .terreno-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
   .terreno-slot{
     aspect-ratio:4/3; position:relative; overflow:hidden; background:var(--line);
@@ -262,15 +293,15 @@ fbq('track', 'PageView');
   .terreno-slot span{
     position:absolute; left:14px; bottom:14px; z-index:2;
     font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; font-weight:600;
-    color:var(--cream); background:rgba(26,22,17,.55); padding:5px 10px;
+    color:var(--cream); background:rgba(16,41,58,.55); padding:5px 10px;
   }
   @media(max-width:720px){.terreno-grid{grid-template-columns:1fr 1fr;}}
 
   /* ---------- SITE PLAN ---------- */
-  .siteplan{background:var(--ink); color:var(--cream); padding:130px 0;}
+  .siteplan{background:var(--ink); color:var(--cream); padding:170px 0;}
   .siteplan .eyebrow.on-dark{margin-bottom:14px; display:block;}
   .siteplan h2{font-size:clamp(30px,3.6vw,46px); font-weight:400; margin-bottom:14px;}
-  .siteplan .lede{font-size:15px; color:rgba(244,238,234,.55); max-width:420px; margin-bottom:56px;}
+  .siteplan .lede{font-size:15px; color:rgba(246,243,237,.55); max-width:420px; margin-bottom:56px;}
   .siteplan-diagram{
     display:grid; grid-template-columns:1.5fr 1fr; gap:70px; align-items:center;
   }
@@ -278,10 +309,10 @@ fbq('track', 'PageView');
   .siteplan-key{display:flex; flex-direction:column; gap:24px;}
   .key-row{display:flex; gap:16px; align-items:flex-start;}
   .key-swatch{width:12px; height:12px; margin-top:6px; flex-shrink:0;}
-  .key-row h4{font-family:'DM Sans'; font-size:13.5px; font-weight:600; margin-bottom:4px;}
-  .key-row span{font-size:12.5px; color:rgba(244,238,234,.5); line-height:1.6;}
+  .key-row h4{font-family:'Manrope'; font-size:13.5px; font-weight:600; margin-bottom:4px;}
+  .key-row span{font-size:12.5px; color:rgba(246,243,237,.5); line-height:1.6;}
   .siteplan-caption{
-    font-size:11px; color:rgba(244,238,234,.35); margin-top:10px; font-style:italic;
+    font-size:11px; color:rgba(246,243,237,.35); margin-top:10px; font-style:italic;
     font-family:'Cormorant Garamond',serif;
   }
   @media(max-width:900px){
@@ -290,34 +321,33 @@ fbq('track', 'PageView');
   }
 
   /* ---------- CONTEXT (zoning + provenance combined) ---------- */
-  .context{padding:130px 0;}
-  .context-grid{display:grid; grid-template-columns:1fr 1fr; gap:80px;}
-  .context h2{font-size:clamp(26px,3vw,36px); font-weight:400; margin-bottom:18px;}
-  .context p{font-size:14.5px; line-height:1.75; color:rgba(26,22,17,.6); max-width:420px;}
-  .context-list{list-style:none; margin-top:28px;}
-  .context-list li{
-    padding:14px 0; border-top:1px solid var(--line);
-    display:flex; justify-content:space-between; gap:20px; font-size:13px;
+  .context{padding:160px 0;}
+  .context > .wrap > .eyebrow{display:block; text-align:center;}
+  .context-head{text-align:center; max-width:640px; margin:0 auto 70px;}
+  .context-head h2{font-size:clamp(28px,3.2vw,40px); font-weight:400; margin-top:14px;}
+  .highlights-grid{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line); border-left:1px solid var(--line);
   }
-  .context-list li:last-child{border-bottom:1px solid var(--line);}
-  .context-list li span:first-child{color:rgba(26,22,17,.5);}
-  .context-list li span:last-child{font-weight:600; text-align:right;}
-  .context-note{font-size:11.5px; color:rgba(26,22,17,.4); margin-top:20px; line-height:1.6;}
-  .provenance-marks{display:flex; flex-wrap:wrap; gap:12px; margin-top:22px;}
-  .pmark{
-    border:1px solid var(--line); padding:9px 14px; font-size:11px;
-    letter-spacing:.05em; text-transform:uppercase; font-weight:600; color:var(--sage);
+  .highlight-cell{
+    padding:44px 38px; border-right:1px solid var(--line); border-bottom:1px solid var(--line);
   }
-  .audience-line{
-    margin-top:56px; padding-top:36px; border-top:1px solid var(--line);
-    display:flex; gap:50px; flex-wrap:wrap;
+  .highlight-cell .hnum{
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:15px;
+    color:var(--orange); margin-bottom:16px;
   }
-  .audience-line div{flex:1; min-width:180px;}
-  .audience-line h4{font-size:14px; font-weight:600; margin-bottom:6px;}
-  .audience-line span{font-size:12.5px; color:rgba(26,22,17,.55); line-height:1.6;}
+  .highlight-cell h4{font-size:14.5px; font-weight:700; margin-bottom:10px; letter-spacing:.01em;}
+  .highlight-cell p{font-size:13.5px; line-height:1.7; color:var(--charcoal); opacity:.65;}
+  .context-footnote{
+    font-size:11.5px; color:var(--charcoal); opacity:.45; line-height:1.6;
+    margin-top:30px; text-align:center; max-width:640px; margin-left:auto; margin-right:auto;
+  }
   @media(max-width:900px){
-    .context{padding:80px 0;}
-    .context-grid{grid-template-columns:1fr; gap:40px;}
+    .context{padding:90px 0;}
+    .highlights-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:600px){
+    .highlights-grid{grid-template-columns:1fr;}
   }
 
   /* ---------- INQUIRE ---------- */
@@ -330,33 +360,33 @@ fbq('track', 'PageView');
     background-image:url('./images/residencias-1.jpg');
     background-size:cover; background-position:center;
   }
-  .inquire-grad{position:absolute; inset:0; background:rgba(26,22,17,.72);}
-  .inquire-inner{position:relative; z-index:2; width:100%; padding:100px 0;}
+  .inquire-grad{position:absolute; inset:0; background:rgba(16,41,58,.72);}
+  .inquire-inner{position:relative; z-index:2; width:100%; padding:130px 0;}
   .inquire-grid{display:grid; grid-template-columns:1fr 1fr; gap:80px;}
   .inquire h2{font-size:clamp(32px,4vw,52px); font-weight:400; margin-bottom:18px;}
-  .inquire-grid > div:first-child p{font-size:15px; line-height:1.7; color:rgba(244,238,234,.65); max-width:400px; margin-bottom:36px;}
+  .inquire-grid > div:first-child p{font-size:15px; line-height:1.7; color:rgba(246,243,237,.65); max-width:400px; margin-bottom:36px;}
   .agents{display:flex; flex-direction:column; border-top:1px solid var(--line-on-dark);}
   .agent{
     display:flex; justify-content:space-between; align-items:center;
     padding:18px 0; border-bottom:1px solid var(--line-on-dark);
   }
   .agent .aname{font-family:'Cormorant Garamond',serif; font-size:19px;}
-  .agent .arole{font-size:11px; color:rgba(244,238,234,.5); text-transform:uppercase; letter-spacing:.08em; margin-top:3px;}
+  .agent .arole{font-size:11px; color:rgba(246,243,237,.5); text-transform:uppercase; letter-spacing:.08em; margin-top:3px;}
   .agent a{
     font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; font-weight:600;
     color:var(--sand); border-bottom:1px solid var(--sand); padding-bottom:2px;
   }
-  .mls-link{display:inline-block; margin-top:28px; font-size:12px; color:rgba(244,238,234,.5);}
-  .mls-link a{color:var(--sand); border-bottom:1px solid rgba(205,191,164,.4);}
+  .mls-link{display:inline-block; margin-top:28px; font-size:12px; color:rgba(246,243,237,.5);}
+  .mls-link a{color:var(--sand); border-bottom:1px solid rgba(232,223,209,.4);}
 
   form.iform{display:flex; flex-direction:column; gap:15px;}
   .iform label{
-    font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:rgba(244,238,234,.5);
+    font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:rgba(246,243,237,.5);
     margin-bottom:6px; display:block;
   }
   .iform input, .iform select, .iform textarea{
-    width:100%; background:transparent; border:none; border-bottom:1px solid rgba(244,238,234,.3);
-    color:var(--cream); font-family:'DM Sans'; font-size:15px; padding:8px 2px;
+    width:100%; background:transparent; border:none; border-bottom:1px solid rgba(246,243,237,.3);
+    color:var(--cream); font-family:'Manrope'; font-size:15px; padding:8px 2px;
     outline:none; transition:border-color .2s;
   }
   .iform input:focus, .iform select:focus, .iform textarea:focus{border-color:var(--orange);}
@@ -369,7 +399,7 @@ fbq('track', 'PageView');
     cursor:pointer; transition:background .2s;
   }
   .iform button:hover{background:#e88a5c;}
-  .form-note{font-size:11px; color:rgba(244,238,234,.35); margin-top:12px;}
+  .form-note{font-size:11px; color:rgba(246,243,237,.35); margin-top:12px;}
   @media(max-width:860px){.inquire-grid{grid-template-columns:1fr; gap:40px;}}
 
   /* ---------- FOOTER ---------- */
@@ -378,12 +408,19 @@ fbq('track', 'PageView');
     display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap;
     padding-bottom:36px; border-bottom:1px solid var(--line);
   }
-  .footer-logo{font-family:'Cormorant Garamond',serif; font-size:20px; letter-spacing:.05em;}
-  .footer-addr{font-size:12px; color:rgba(26,22,17,.5); line-height:1.7;}
+  .footer-logo{font-family:'Cormorant Garamond',serif; font-size:20px; letter-spacing:.05em; color:var(--ink);}
+  .footer-addr{font-size:12px; color:rgba(36,42,45,.5); line-height:1.7;}
   .footer-links{display:flex; gap:22px;}
-  .footer-links a{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:rgba(26,22,17,.55);}
+  .footer-links a{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:rgba(36,42,45,.55);}
   .footer-links a:hover{color:var(--orange);}
-  .footer-legal{font-size:10.5px; line-height:1.7; color:rgba(26,22,17,.4); margin-top:22px; max-width:1000px;}
+  .footer-legal-box{
+    margin-top:34px; padding:26px 30px; border:1px solid var(--line); background:var(--sand);
+  }
+  .footer-legal-box .flabel{
+    font-size:10px; text-transform:uppercase; letter-spacing:.16em; font-weight:700;
+    color:var(--orange); margin-bottom:10px; display:block;
+  }
+  .footer-legal{font-size:11.5px; line-height:1.75; color:var(--charcoal); opacity:.75; max-width:1000px;}
 
   .reveal{opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
   .reveal.in{opacity:1; transform:none;}
@@ -397,7 +434,7 @@ fbq('track', 'PageView');
   <div class="nav-logo">RARE</div>
   <div class="nav-right">
     <div class="nav-mls">MLS 26-2618</div>
-    <a class="nav-cta" href="#inquire">Contacto</a>
+    <a class="nav-cta" href="#inquire">Investment Package</a>
   </div>
 </header>
 
@@ -409,6 +446,7 @@ fbq('track', 'PageView');
   <div class="hero-inner">
     <div class="hero-eyebrow reveal">El Pescadero &middot; Baja California Sur</div>
     <h1 class="reveal">Beach &amp; Huerta<em>Legacy Parcels</em></h1>
+    <p class="hero-subtitle reveal">Tres parcelas independientes ofrecidas como una sola oportunidad estratégica de desarrollo en El Pescadero.</p>
   </div>
   <div class="scroll-cue"></div>
 </section>
@@ -428,6 +466,20 @@ fbq('track', 'PageView');
   <div class="wrap">
     <div class="eyebrow reveal">La Oportunidad</div>
     <h2 class="reveal">Tres parcelas. Un mismo corredor.<br><em>Una sola visión.</em></h2>
+    <p class="statement-sub reveal">Un ensamblaje excepcional de suelo costero en Pescadero — adquisición estratégica para desarrollo hotelero, residencial o de uso mixto.</p>
+  </div>
+</section>
+
+<!-- CONCEPTUAL INTRO -->
+<section class="concept-intro">
+  <div class="wrap concept-intro-grid">
+    <div class="reveal">
+      <div class="eyebrow">Visión Conceptual</div>
+      <h2>Lo que el terreno podría llegar a ser.</h2>
+    </div>
+    <div class="reveal">
+      <p>Las visualizaciones que siguen ilustran, a manera de ejercicio conceptual, el potencial de cada parcela dentro del corredor. No representan un desarrollo aprobado, permisionado ni en proceso de construcción — son un ejercicio de posibilidad, preparado para ayudar a un comprador institucional a imaginar escenarios de desarrollo antes de comisionar sus propios estudios.</p>
+    </div>
   </div>
 </section>
 
@@ -437,7 +489,7 @@ fbq('track', 'PageView');
     <div class="vimg reveal" data-carousel>
       <div class="vslide active">
         <img src="./images/beach-club-1.jpg" alt="Beach Club — Parcela 01, foto 1" loading="lazy">
-        <div class="vtag">Render Conceptual</div>
+        <div class="vtag">Visualización Conceptual</div>
       </div>
       <div class="vslide"><img src="./images/beach-club-2.jpg" alt="Beach Club — Parcela 01, foto 2" loading="lazy"></div>
       <div class="vslide"><img src="./images/beach-club-3.jpg" alt="Beach Club — Parcela 01, foto 3" loading="lazy"></div>
@@ -445,8 +497,8 @@ fbq('track', 'PageView');
       <div class="vslide"><img src="./images/beach-club-5.jpg" alt="Beach Club — Parcela 01, foto 5" loading="lazy"></div>
       <div class="vslide vslide-cta">
         <div>
-          <h4>Ve el expediente completo</h4>
-          <a href="#inquire" class="vcta-btn">Solicitar Información</a>
+          <h4>Explore el Investment Package</h4>
+          <a href="#inquire" class="vcta-btn">Solicitar</a>
         </div>
       </div>
       <div class="vdots"></div>
@@ -456,9 +508,10 @@ fbq('track', 'PageView');
     <div class="vtext reveal">
       <div class="vnum">01</div>
       <div class="vtext-inner">
-        <h3>Parcela 01</h3>
-        <div class="vsub">Beach Club</div>
-        <p>Restaurante, bar y alberca frente al Pacífico.</p>
+        <div class="vref">Parcela 01</div>
+        <h3>La Parcela de Playa</h3>
+        <div class="vsub">Potencial Conceptual — Hospitalidad</div>
+        <p>Frente directo al Pacífico, con vocación natural para hospitalidad.</p>
         <div class="vsize">Superficie &nbsp;<b>4,535 m²</b></div>
       </div>
     </div>
@@ -468,7 +521,7 @@ fbq('track', 'PageView');
     <div class="vimg reveal" data-carousel>
       <div class="vslide active">
         <img src="./images/hotel-1.jpg" alt="Hotel — Parcela 02, foto 1" loading="lazy">
-        <div class="vtag">Render Conceptual</div>
+        <div class="vtag">Visualización Conceptual</div>
       </div>
       <div class="vslide"><img src="./images/hotel-2.jpg" alt="Hotel — Parcela 02, foto 2" loading="lazy"></div>
       <div class="vslide"><img src="./images/hotel-3.jpg" alt="Hotel — Parcela 02, foto 3" loading="lazy"></div>
@@ -477,8 +530,8 @@ fbq('track', 'PageView');
       <div class="vslide"><img src="./images/hotel-6.jpg" alt="Hotel — Parcela 02, foto 6" loading="lazy"></div>
       <div class="vslide vslide-cta">
         <div>
-          <h4>Ve el expediente completo</h4>
-          <a href="#inquire" class="vcta-btn">Solicitar Información</a>
+          <h4>Explore el Investment Package</h4>
+          <a href="#inquire" class="vcta-btn">Solicitar</a>
         </div>
       </div>
       <div class="vdots"></div>
@@ -488,9 +541,10 @@ fbq('track', 'PageView');
     <div class="vtext reveal">
       <div class="vnum">02</div>
       <div class="vtext-inner">
-        <h3>Parcela 02</h3>
-        <div class="vsub">Hotel</div>
-        <p>~1.1 km tierra adentro. Terreno plano, listo para construir.</p>
+        <div class="vref">Parcela 02</div>
+        <h3>La Parcela Costera</h3>
+        <div class="vsub">Potencial Conceptual — Uso Mixto</div>
+        <p>~1.1 km tierra adentro. Terreno plano, con flexibilidad de programa.</p>
         <div class="vsize">Superficie &nbsp;<b>28,847 m²</b></div>
       </div>
     </div>
@@ -500,7 +554,7 @@ fbq('track', 'PageView');
     <div class="vimg reveal" data-carousel>
       <div class="vslide active">
         <img src="./images/residencias-1.jpg" alt="Residencias — Parcela 03, foto 1" loading="lazy">
-        <div class="vtag">Render Conceptual</div>
+        <div class="vtag">Visualización Conceptual</div>
       </div>
       <div class="vslide"><img src="./images/residencias-2.jpg" alt="Residencias — Parcela 03, foto 2" loading="lazy"></div>
       <div class="vslide"><img src="./images/residencias-3.jpg" alt="Residencias — Parcela 03, foto 3" loading="lazy"></div>
@@ -508,8 +562,8 @@ fbq('track', 'PageView');
       <div class="vslide"><img src="./images/residencias-5.jpg" alt="Residencias — Parcela 03, foto 5" loading="lazy"></div>
       <div class="vslide vslide-cta">
         <div>
-          <h4>Ve el expediente completo</h4>
-          <a href="#inquire" class="vcta-btn">Solicitar Información</a>
+          <h4>Explore el Investment Package</h4>
+          <a href="#inquire" class="vcta-btn">Solicitar</a>
         </div>
       </div>
       <div class="vdots"></div>
@@ -519,12 +573,20 @@ fbq('track', 'PageView');
     <div class="vtext reveal">
       <div class="vnum">03</div>
       <div class="vtext-inner">
-        <h3>Parcela 03</h3>
-        <div class="vsub">Residencias</div>
-        <p>~0.8 km al norte. Mango maduro, privacidad total.</p>
+        <div class="vref">Parcela 03</div>
+        <h3>La Parcela de la Huerta</h3>
+        <div class="vsub">Potencial Conceptual — Residencial</div>
+        <p>~0.8 km al norte. Mango maduro, privacidad natural.</p>
         <div class="vsize">Superficie &nbsp;<b>41,400 m²</b></div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- MINI DISCLAIMER -->
+<div class="mini-disclaimer">
+  <div class="wrap">
+    <p>Todas las visualizaciones mostradas son ilustraciones conceptuales preparadas exclusivamente para comunicar posibles escenarios de desarrollo.</p>
   </div>
 </div>
 
@@ -532,7 +594,7 @@ fbq('track', 'PageView');
 <section class="terreno">
   <div class="wrap">
     <div class="terreno-head reveal">
-      <div class="eyebrow">El Terreno Hoy</div>
+      <div class="eyebrow">Fotografía Real del Sitio</div>
       <h2>Antes de la visión, el sitio real.</h2>
       <p>Fotografía aérea reciente de cada parcela.</p>
     </div>
@@ -552,99 +614,116 @@ fbq('track', 'PageView');
     <p class="lede reveal">No son colindantes — así es la distancia real entre ellas.</p>
     <div class="siteplan-diagram">
       <svg class="reveal" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0" width="125" height="480" fill="#0f509b" opacity=".18"/>
-        <path d="M0,30 C35,40 35,20 70,30 C100,40 100,20 125,28" stroke="#cdbfa4" stroke-width="1" fill="none" opacity=".4"/>
-        <path d="M0,110 C35,120 35,100 70,110 C100,120 100,100 125,108" stroke="#cdbfa4" stroke-width="1" fill="none" opacity=".35"/>
-        <path d="M0,190 C35,200 35,180 70,190 C100,200 100,180 125,188" stroke="#cdbfa4" stroke-width="1" fill="none" opacity=".3"/>
-        <path d="M0,270 C35,280 35,260 70,270 C100,280 100,260 125,268" stroke="#cdbfa4" stroke-width="1" fill="none" opacity=".3"/>
-        <path d="M0,350 C35,360 35,340 70,350 C100,360 100,340 125,348" stroke="#cdbfa4" stroke-width="1" fill="none" opacity=".28"/>
-        <path d="M0,430 C35,440 35,420 70,430 C100,440 100,420 125,428" stroke="#cdbfa4" stroke-width="1" fill="none" opacity=".25"/>
-        <text x="12" y="22" fill="#cdbfa4" font-family="Cormorant Garamond" font-size="14" font-style="italic">Océano Pacífico</text>
+        <g opacity=".14">
+          <path d="M-20,120 C80,95 140,150 240,120 C340,90 400,140 500,110" stroke="#E8DFD1" stroke-width=".6" fill="none"/>
+          <path d="M-20,170 C90,145 150,195 250,168 C350,140 410,185 500,160" stroke="#E8DFD1" stroke-width=".6" fill="none"/>
+          <path d="M-20,260 C85,235 155,285 255,258 C355,230 405,270 500,248" stroke="#E8DFD1" stroke-width=".6" fill="none"/>
+          <path d="M-20,320 C95,298 160,340 260,315 C355,292 415,330 500,308" stroke="#E8DFD1" stroke-width=".6" fill="none"/>
+          <path d="M-20,390 C90,368 150,408 250,384 C350,362 410,398 500,378" stroke="#E8DFD1" stroke-width=".6" fill="none"/>
+        </g>
+        <rect x="0" y="0" width="125" height="480" fill="#10293A" opacity=".18"/>
+        <path d="M0,30 C35,40 35,20 70,30 C100,40 100,20 125,28" stroke="#E8DFD1" stroke-width="1" fill="none" opacity=".4"/>
+        <path d="M0,110 C35,120 35,100 70,110 C100,120 100,100 125,108" stroke="#E8DFD1" stroke-width="1" fill="none" opacity=".35"/>
+        <path d="M0,190 C35,200 35,180 70,190 C100,200 100,180 125,188" stroke="#E8DFD1" stroke-width="1" fill="none" opacity=".3"/>
+        <path d="M0,270 C35,280 35,260 70,270 C100,280 100,260 125,268" stroke="#E8DFD1" stroke-width="1" fill="none" opacity=".3"/>
+        <path d="M0,350 C35,360 35,340 70,350 C100,360 100,340 125,348" stroke="#E8DFD1" stroke-width="1" fill="none" opacity=".28"/>
+        <path d="M0,430 C35,440 35,420 70,430 C100,440 100,420 125,428" stroke="#E8DFD1" stroke-width="1" fill="none" opacity=".25"/>
+        <text x="12" y="22" fill="#E8DFD1" font-family="Cormorant Garamond" font-size="14" font-style="italic">Océano Pacífico</text>
 
         <line x1="140" y1="300" x2="319" y2="347" stroke="#8a8070" stroke-width="1" stroke-dasharray="3 4" opacity=".6"/>
         <line x1="140" y1="300" x2="326" y2="211" stroke="#8a8070" stroke-width="1" stroke-dasharray="3 4" opacity=".6"/>
         <line x1="319" y1="347" x2="326" y2="211" stroke="#8a8070" stroke-width="1" stroke-dasharray="3 4" opacity=".6"/>
 
-        <text x="200" y="335" fill="#cdbfa4" font-family="DM Sans" font-size="9.5" letter-spacing=".04em">~1.1 KM</text>
-        <text x="205" y="245" fill="#cdbfa4" font-family="DM Sans" font-size="9.5" letter-spacing=".04em">~1.2 KM</text>
-        <text x="332" y="282" fill="#cdbfa4" font-family="DM Sans" font-size="9.5" letter-spacing=".04em">~0.8 KM</text>
+        <text x="200" y="335" fill="#E8DFD1" font-family="Manrope" font-size="9.5" letter-spacing=".04em">~1.1 KM</text>
+        <text x="205" y="245" fill="#E8DFD1" font-family="Manrope" font-size="9.5" letter-spacing=".04em">~1.2 KM</text>
+        <text x="332" y="282" fill="#E8DFD1" font-family="Manrope" font-size="9.5" letter-spacing=".04em">~0.8 KM</text>
 
-        <circle cx="140" cy="300" r="15" fill="#dd7447" opacity=".85"/>
-        <circle cx="140" cy="300" r="24" fill="none" stroke="#dd7447" stroke-width="1" opacity=".4"/>
-        <text x="140" y="304" fill="#1a1611" font-family="DM Sans" font-size="10" font-weight="700" text-anchor="middle">01</text>
-        <text x="140" y="342" fill="#f4eeea" font-family="DM Sans" font-size="11.5" font-weight="600" text-anchor="middle">PARCELA 01</text>
-        <text x="140" y="357" fill="rgba(244,238,234,.55)" font-family="DM Sans" font-size="9.5" text-anchor="middle">4,535 m²</text>
+        <circle cx="140" cy="300" r="15" fill="#B76643" opacity=".85"/>
+        <circle cx="140" cy="300" r="24" fill="none" stroke="#B76643" stroke-width="1" opacity=".4"/>
+        <text x="140" y="304" fill="#10293A" font-family="Manrope" font-size="10" font-weight="700" text-anchor="middle">01</text>
+        <text x="140" y="342" fill="#F6F3ED" font-family="Manrope" font-size="11.5" font-weight="600" text-anchor="middle">PARCELA 01</text>
+        <text x="140" y="357" fill="rgba(246,243,237,.55)" font-family="Manrope" font-size="9.5" text-anchor="middle">4,535 m²</text>
 
-        <circle cx="319" cy="347" r="15" fill="#5b8fce" opacity=".85"/>
-        <circle cx="319" cy="347" r="24" fill="none" stroke="#5b8fce" stroke-width="1" opacity=".4"/>
-        <text x="319" y="351" fill="#1a1611" font-family="DM Sans" font-size="10" font-weight="700" text-anchor="middle">02</text>
-        <text x="319" y="389" fill="#f4eeea" font-family="DM Sans" font-size="11.5" font-weight="600" text-anchor="middle">PARCELA 02</text>
-        <text x="319" y="404" fill="rgba(244,238,234,.55)" font-family="DM Sans" font-size="9.5" text-anchor="middle">28,847 m²</text>
+        <circle cx="319" cy="347" r="15" fill="#E8DFD1" opacity=".85"/>
+        <circle cx="319" cy="347" r="24" fill="none" stroke="#E8DFD1" stroke-width="1" opacity=".4"/>
+        <text x="319" y="351" fill="#10293A" font-family="Manrope" font-size="10" font-weight="700" text-anchor="middle">02</text>
+        <text x="319" y="389" fill="#F6F3ED" font-family="Manrope" font-size="11.5" font-weight="600" text-anchor="middle">PARCELA 02</text>
+        <text x="319" y="404" fill="rgba(246,243,237,.55)" font-family="Manrope" font-size="9.5" text-anchor="middle">28,847 m²</text>
 
-        <circle cx="326" cy="211" r="15" fill="#8fa27e" opacity=".85"/>
-        <circle cx="326" cy="211" r="24" fill="none" stroke="#8fa27e" stroke-width="1" opacity=".4"/>
-        <text x="326" y="215" fill="#1a1611" font-family="DM Sans" font-size="10" font-weight="700" text-anchor="middle">03</text>
-        <text x="326" y="176" fill="#f4eeea" font-family="DM Sans" font-size="11.5" font-weight="600" text-anchor="middle">PARCELA 03</text>
-        <text x="326" y="161" fill="rgba(244,238,234,.55)" font-family="DM Sans" font-size="9.5" text-anchor="middle">41,400 m²</text>
-        <circle cx="360" cy="195" r="6" fill="none" stroke="#8fa27e" stroke-width="1" opacity=".5"/>
-        <circle cx="375" cy="215" r="5" fill="none" stroke="#8fa27e" stroke-width="1" opacity=".4"/>
-        <circle cx="355" cy="230" r="6" fill="none" stroke="#8fa27e" stroke-width="1" opacity=".45"/>
+        <circle cx="326" cy="211" r="15" fill="#485C42" opacity=".85"/>
+        <circle cx="326" cy="211" r="24" fill="none" stroke="#485C42" stroke-width="1" opacity=".4"/>
+        <text x="326" y="215" fill="#10293A" font-family="Manrope" font-size="10" font-weight="700" text-anchor="middle">03</text>
+        <text x="326" y="176" fill="#F6F3ED" font-family="Manrope" font-size="11.5" font-weight="600" text-anchor="middle">PARCELA 03</text>
+        <text x="326" y="161" fill="rgba(246,243,237,.55)" font-family="Manrope" font-size="9.5" text-anchor="middle">41,400 m²</text>
+        <circle cx="360" cy="195" r="6" fill="none" stroke="#485C42" stroke-width="1" opacity=".5"/>
+        <circle cx="375" cy="215" r="5" fill="none" stroke="#485C42" stroke-width="1" opacity=".4"/>
+        <circle cx="355" cy="230" r="6" fill="none" stroke="#485C42" stroke-width="1" opacity=".45"/>
 
         <g transform="translate(430,40)">
-          <line x1="0" y1="18" x2="0" y2="-14" stroke="#cdbfa4" stroke-width="1"/>
-          <path d="M0,-14 L-5,-4 L5,-4 Z" fill="#cdbfa4"/>
-          <text x="0" y="32" fill="#cdbfa4" font-family="DM Sans" font-size="10" font-weight="600" text-anchor="middle">N</text>
+          <line x1="0" y1="18" x2="0" y2="-14" stroke="#E8DFD1" stroke-width="1"/>
+          <path d="M0,-14 L-5,-4 L5,-4 Z" fill="#E8DFD1"/>
+          <text x="0" y="32" fill="#E8DFD1" font-family="Manrope" font-size="10" font-weight="600" text-anchor="middle">N</text>
         </g>
 
         <g transform="translate(340,440)">
-          <line x1="0" y1="0" x2="85" y2="0" stroke="#cdbfa4" stroke-width="1"/>
-          <line x1="0" y1="-4" x2="0" y2="4" stroke="#cdbfa4" stroke-width="1"/>
-          <line x1="85" y1="-4" x2="85" y2="4" stroke="#cdbfa4" stroke-width="1"/>
-          <text x="42" y="16" fill="rgba(244,238,234,.55)" font-family="DM Sans" font-size="9" text-anchor="middle">1 KM</text>
+          <line x1="0" y1="0" x2="85" y2="0" stroke="#E8DFD1" stroke-width="1"/>
+          <line x1="0" y1="-4" x2="0" y2="4" stroke="#E8DFD1" stroke-width="1"/>
+          <line x1="85" y1="-4" x2="85" y2="4" stroke="#E8DFD1" stroke-width="1"/>
+          <text x="42" y="16" fill="rgba(246,243,237,.55)" font-family="Manrope" font-size="9" text-anchor="middle">1 KM</text>
         </g>
       </svg>
       <div class="siteplan-key reveal">
-        <div class="key-row"><div class="key-swatch" style="background:#dd7447;"></div><div><h4>Parcela 01 — Beach Club</h4><span>4,535 m² &middot; frente directo al Pacífico</span></div></div>
-        <div class="key-row"><div class="key-swatch" style="background:#5b8fce;"></div><div><h4>Parcela 02 — Hotel</h4><span>28,847 m² &middot; ~1.1 km tierra adentro</span></div></div>
-        <div class="key-row"><div class="key-swatch" style="background:#8fa27e;"></div><div><h4>Parcela 03 — Residencias</h4><span>41,400 m² &middot; ~0.8 km al norte de la parcela 02</span></div></div>
+        <div class="key-row"><div class="key-swatch" style="background:#B76643;"></div><div><h4>Parcela 01 — Beach Club</h4><span>4,535 m² &middot; frente directo al Pacífico</span></div></div>
+        <div class="key-row"><div class="key-swatch" style="background:#E8DFD1;"></div><div><h4>Parcela 02 — Hotel</h4><span>28,847 m² &middot; ~1.1 km tierra adentro</span></div></div>
+        <div class="key-row"><div class="key-swatch" style="background:#485C42;"></div><div><h4>Parcela 03 — Residencias</h4><span>41,400 m² &middot; ~0.8 km al norte de la parcela 02</span></div></div>
         <p class="siteplan-caption">Posiciones aproximadas, no sustituyen levantamiento certificado.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTEXT: zoning + provenance + audience -->
+<!-- INVESTMENT HIGHLIGHTS -->
 <section class="context" id="zoning">
   <div class="wrap">
-    <div class="context-grid">
-      <div class="reveal">
-        <div class="eyebrow">Uso de Suelo</div>
-        <h2 style="margin-top:14px;">Lo que permite el corredor.</h2>
-        <p>Precedente de hospitalidad boutique y residencial de baja densidad — sin torres, sin turismo masivo.</p>
-        <ul class="context-list">
-          <li><span>Municipio</span><span>La Paz, BCS</span></li>
-          <li><span>Frente costero</span><span>Aplica ZOFEMAT</span></li>
-          <li><span>Comparables</span><span>Hotel San Cristóbal, Jazamango</span></li>
-        </ul>
-        <p class="context-note">Zonificación no verificada formalmente. Se recomienda estudio de uso de suelo independiente antes de ofertar.</p>
+    <div class="context-head reveal">
+      <div class="eyebrow">Investment Highlights</div>
+      <h2>Por qué este ensamblaje.</h2>
+    </div>
+
+    <div class="highlights-grid reveal">
+      <div class="highlight-cell">
+        <div class="hnum">01</div>
+        <h4>Ubicación</h4>
+        <p>El Pescadero, dentro del corredor Todos Santos–Cabo, a minutos de Hotel San Cristóbal y del corredor Jazamango.</p>
       </div>
-      <div class="reveal" id="location">
-        <div class="eyebrow">Trayectoria</div>
-        <h2 style="margin-top:14px;">Un vendedor que ya construyó aquí.</h2>
-        <p>Los mismos socios detrás de proyectos que hoy definen el corredor Pescadero–Todos Santos.</p>
-        <div class="provenance-marks">
-          <div class="pmark">Hotel San Cristóbal</div>
-          <div class="pmark">Corredor Jazamango</div>
-          <div class="pmark">Campus CSU Todos Santos</div>
-        </div>
+      <div class="highlight-cell">
+        <div class="hnum">02</div>
+        <h4>Escala</h4>
+        <p>18.48 acres reunidos en tres parcelas — suficiente escala para un desarrollo por fases.</p>
+      </div>
+      <div class="highlight-cell" id="location">
+        <div class="hnum">03</div>
+        <h4>Ensamblaje</h4>
+        <p>Tres predios bajo un mismo propietario, ofrecidos por primera vez como una sola adquisición.</p>
+      </div>
+      <div class="highlight-cell">
+        <div class="hnum">04</div>
+        <h4>Contexto de Planeación</h4>
+        <p>Corredor sin torres ni turismo masivo — precedente de hospitalidad boutique y residencial de baja densidad.</p>
+      </div>
+      <div class="highlight-cell">
+        <div class="hnum">05</div>
+        <h4>Flexibilidad de Desarrollo</h4>
+        <p>Potencial de hospitalidad, residencial o uso mixto, sujeto a estudios de factibilidad independientes.</p>
+      </div>
+      <div class="highlight-cell">
+        <div class="hnum">06</div>
+        <h4>Desarrollos Comparables</h4>
+        <p>Los mismos socios detrás de Hotel San Cristóbal, el corredor Jazamango y el campus CSU Todos Santos.</p>
       </div>
     </div>
 
-    <div class="audience-line reveal">
-      <div><h4>Desarrolladores e Inversionistas</h4><span>Baja, CDMX, Guadalajara, Monterrey, USA y Canadá.</span></div>
-      <div><h4>Hoteleros y Grupos Hospitality</h4><span>Operadores boutique buscando un sitio Pacífico completo.</span></div>
-      <div><h4>Compradores Patrimoniales</h4><span>Activo familiar de largo plazo, ya presentes en Baja.</span></div>
-    </div>
+    <p class="context-footnote">Zonificación no verificada formalmente. Se recomienda estudio de uso de suelo independiente antes de ofertar. Dirigido a desarrolladores e inversionistas institucionales en Baja, CDMX, Guadalajara, Monterrey, EE.UU. y Canadá.</p>
   </div>
 </section>
 
@@ -655,9 +734,9 @@ fbq('track', 'PageView');
   <div class="inquire-inner">
     <div class="wrap inquire-grid">
       <div class="reveal">
-        <div class="eyebrow on-dark">Contacto</div>
-        <h2 style="margin-top:14px;">Solicita el expediente completo.</h2>
-        <p>Propuesta de marketing, plano de parcelas y contacto directo con el equipo.</p>
+        <div class="eyebrow on-dark">Investment Package</div>
+        <h2 style="margin-top:14px;">Solicita el Investment Package.</h2>
+        <p>Investment Package completo, plano de parcelas y contacto directo con el equipo de desarrollo.</p>
 
         <div class="agents">
           <div class="agent">
@@ -696,7 +775,7 @@ fbq('track', 'PageView');
             <input type="tel" name="phone">
           </div>
           <div>
-            <label>Soy...</label>
+            <label>Perfil del Inversionista</label>
             <select name="buyer_type">
               <option value="Developer / Investor">Desarrollador / Inversionista</option>
               <option value="Hotelier / Hospitality Group">Hotelero / Grupo Hospitality</option>
@@ -706,9 +785,9 @@ fbq('track', 'PageView');
           </div>
           <div>
             <label>Mensaje</label>
-            <textarea name="message" placeholder="Cuéntanos sobre tu interés en este terreno..."></textarea>
+            <textarea name="message" placeholder="Describa brevemente su interés en esta adquisición..."></textarea>
           </div>
-          <button type="submit">Enviar Solicitud</button>
+          <button type="submit">Solicitar Investment Package</button>
           <p class="form-note">Reemplaza YOUR_WEB3FORMS_ACCESS_KEY_HERE con la clave de Web3Forms del proyecto antes de publicar.</p>
         </form>
       </div>
@@ -725,10 +804,13 @@ fbq('track', 'PageView');
       </div>
       <div class="footer-links">
         <a href="https://ricardoamigo.com" target="_blank" rel="noopener">ricardoamigo.com</a>
-        <a href="#inquire">Contacto</a>
+        <a href="#inquire">Investment Package</a>
       </div>
     </div>
-    <p class="footer-legal">Beach &amp; Huerta Legacy Parcels se ofrece a través de RARE — Ricardo Amigo Real Estate. Las tres parcelas no son contiguas — cada una es un predio independiente dentro del mismo corredor, a 0.8–1.2 km entre sí. Los renders, el plano del sitio y la narrativa de desarrollo en esta página son material de marketing ilustrativo preparado por RARE Marketing, construido a partir de coordenadas de referencia mapeadas; no constituyen un desarrollo aprobado, permisionado o en proceso, y no sustituyen un levantamiento topográfico certificado. El uso de suelo, la zonificación y la factibilidad deben verificarse de manera independiente con las autoridades municipales antes de cualquier oferta.</p>
+    <div class="footer-legal-box">
+      <span class="flabel">Aviso Importante</span>
+      <p class="footer-legal">Beach &amp; Huerta Legacy Parcels se ofrece a través de RARE — Ricardo Amigo Real Estate. Las tres parcelas no son contiguas — cada una es un predio independiente dentro del mismo corredor, a 0.8–1.2 km entre sí. Los renders, el plano del sitio y la narrativa de desarrollo en esta página son material de marketing ilustrativo preparado por RARE Marketing, construido a partir de coordenadas de referencia mapeadas; no constituyen un desarrollo aprobado, permisionado o en proceso, y no sustituyen un levantamiento topográfico certificado. El uso de suelo, la zonificación y la factibilidad deben verificarse de manera independiente con las autoridades municipales antes de cualquier oferta.</p>
+    </div>
   </div>
 </footer>
 
