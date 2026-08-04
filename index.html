@@ -61,30 +61,36 @@ fbq('track', 'PageView');
   header.nav{
     position:fixed; top:0; left:0; right:0; z-index:50;
     display:flex; align-items:center; justify-content:space-between;
-    padding:28px 40px;
-    transition:background .35s ease, padding .35s ease;
+    padding:20px 40px;
+    background:var(--ink);
+    transition:padding .35s ease, box-shadow .35s ease;
   }
   header.nav.scrolled{
-    background:rgba(246,243,237,.94);
-    padding:18px 40px;
-    box-shadow:0 1px 0 var(--line);
+    padding:14px 40px;
+    box-shadow:0 4px 18px rgba(16,41,58,.18);
   }
+  .nav-brand{display:flex; align-items:center; gap:12px;}
+  .nav-mark{height:26px; width:auto; flex-shrink:0;}
+  .nav-wordmark{line-height:1.05;}
   .nav-logo{
     font-family:'Cormorant Garamond', serif;
-    font-size:22px; letter-spacing:.08em; color:#fff; font-weight:400;
+    font-size:17px; letter-spacing:.07em; color:var(--cream); font-weight:400;
+    white-space:nowrap;
   }
-  header.nav.scrolled .nav-logo{color:var(--ink);}
+  .nav-sub{
+    font-family:'Manrope', sans-serif; font-size:8.5px; letter-spacing:.24em;
+    color:var(--sand); text-transform:uppercase; font-weight:700; margin-top:1px;
+  }
+  @media(max-width:640px){.nav-sub{display:none;}}
   .nav-right{display:flex; align-items:center; gap:28px;}
-  .nav-mls{font-size:10.5px; letter-spacing:.12em; color:rgba(255,255,255,.55); text-transform:uppercase;}
-  header.nav.scrolled .nav-mls{color:rgba(36,42,45,.45);}
+  .nav-mls{font-size:10.5px; letter-spacing:.12em; color:rgba(246,243,237,.5); text-transform:uppercase;}
+  @media(max-width:640px){.nav-mls{display:none;}}
   .nav-cta{
     font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:600;
-    color:#fff; border:1px solid rgba(255,255,255,.5); padding:10px 20px;
+    color:var(--ink); background:var(--orange); padding:11px 22px;
     transition:all .25s ease;
   }
-  header.nav.scrolled .nav-cta{color:var(--ink); border-color:rgba(36,42,45,.3);}
-  .nav-cta:hover{background:rgba(255,255,255,.12);}
-  header.nav.scrolled .nav-cta:hover{background:rgba(16,41,58,.06);}
+  .nav-cta:hover{background:#c97a54;}
 
   /* ---------- HERO ---------- */
   .hero{
@@ -431,7 +437,17 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4109849605914163&ev=PageView&noscript=1"/></noscript>
 
 <header class="nav" id="nav">
-  <div class="nav-logo">RARE</div>
+  <div class="nav-brand">
+    <svg class="nav-mark" viewBox="0 0 130 26" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,15 C14,3 24,3 34,14" stroke="#B76643" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M34,14 C46,25 56,25 66,14" stroke="#F6F3ED" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M66,14 C78,3 88,3 98,13" stroke="#485C42" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div class="nav-wordmark">
+      <div class="nav-logo">Beach &amp; Huerta</div>
+      <div class="nav-sub">Legacy Parcels</div>
+    </div>
+  </div>
   <div class="nav-right">
     <div class="nav-mls">MLS 26-2618</div>
     <a class="nav-cta" href="#inquire">Investment Package</a>
