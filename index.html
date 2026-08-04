@@ -56,6 +56,7 @@ fbq('track', 'PageView');
   }
   .eyebrow.on-dark{color:#e7b79c;}
   @media(max-width:720px){.wrap{padding:0 24px;}}
+  section[id], div#vision{ scroll-margin-top:88px; }
 
   /* ---------- NAV ---------- */
   header.nav{
@@ -69,26 +70,24 @@ fbq('track', 'PageView');
     padding:14px 40px;
     box-shadow:0 4px 18px rgba(16,41,58,.18);
   }
-  .nav-brand{display:flex; align-items:center; gap:12px;}
-  .nav-mark{height:26px; width:auto; flex-shrink:0;}
-  .nav-wordmark{line-height:1.05;}
-  .nav-logo{
-    font-family:'Cormorant Garamond', serif;
-    font-size:17px; letter-spacing:.07em; color:var(--cream); font-weight:400;
-    white-space:nowrap;
+  .nav-brand{display:flex; align-items:center; flex-shrink:0;}
+  .nav-logo-img{height:42px; width:auto; max-width:220px; object-fit:contain; display:block; transition:height .3s ease;}
+  header.nav.scrolled .nav-logo-img{height:34px;}
+  @media(max-width:640px){.nav-logo-img{height:34px; max-width:160px;}}
+  .nav-right{display:flex; align-items:center; gap:22px; flex-shrink:0;}
+  .nav-links{display:flex; align-items:center; gap:20px; flex-shrink:1; min-width:0;}
+  .nav-links a{
+    font-size:10px; text-transform:uppercase; letter-spacing:.07em; font-weight:600;
+    color:rgba(246,243,237,.7); transition:color .2s ease; white-space:nowrap;
   }
-  .nav-sub{
-    font-family:'Manrope', sans-serif; font-size:8.5px; letter-spacing:.24em;
-    color:var(--sand); text-transform:uppercase; font-weight:700; margin-top:1px;
-  }
-  @media(max-width:640px){.nav-sub{display:none;}}
-  .nav-right{display:flex; align-items:center; gap:28px;}
-  .nav-mls{font-size:10.5px; letter-spacing:.12em; color:rgba(246,243,237,.5); text-transform:uppercase;}
+  .nav-links a:hover{color:var(--cream);}
+  @media(max-width:920px){.nav-links{display:none;}}
+  .nav-mls{font-size:10.5px; letter-spacing:.12em; color:rgba(246,243,237,.5); text-transform:uppercase; white-space:nowrap;}
   @media(max-width:640px){.nav-mls{display:none;}}
   .nav-cta{
     font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:600;
-    color:var(--ink); background:var(--orange); padding:11px 22px;
-    transition:all .25s ease;
+    color:var(--cream); background:var(--orange); padding:11px 22px;
+    transition:all .25s ease; white-space:nowrap; flex-shrink:0;
   }
   .nav-cta:hover{background:#c97a54;}
 
@@ -438,16 +437,15 @@ fbq('track', 'PageView');
 
 <header class="nav" id="nav">
   <div class="nav-brand">
-    <svg class="nav-mark" viewBox="0 0 130 26" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2,15 C14,3 24,3 34,14" stroke="#B76643" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-      <path d="M34,14 C46,25 56,25 66,14" stroke="#F6F3ED" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-      <path d="M66,14 C78,3 88,3 98,13" stroke="#485C42" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-    </svg>
-    <div class="nav-wordmark">
-      <div class="nav-logo">Beach &amp; Huerta</div>
-      <div class="nav-sub">Legacy Parcels</div>
-    </div>
+    <img src="./images/logo.png" alt="Beach &amp; Huerta Legacy Parcels" class="nav-logo-img">
   </div>
+  <nav class="nav-links">
+    <a href="#oportunidad">La Oportunidad</a>
+    <a href="#vision">Parcelas</a>
+    <a href="#vision-conceptual">Visión Conceptual</a>
+    <a href="#contexto">Contexto</a>
+    <a href="#zonificacion">Zonificación</a>
+  </nav>
   <div class="nav-right">
     <div class="nav-mls">MLS 26-2618</div>
     <a class="nav-cta" href="#inquire">Investment Package</a>
@@ -478,7 +476,7 @@ fbq('track', 'PageView');
 </div>
 
 <!-- STATEMENT -->
-<section class="statement">
+<section class="statement" id="oportunidad">
   <div class="wrap">
     <div class="eyebrow reveal">La Oportunidad</div>
     <h2 class="reveal">Tres parcelas. Un mismo corredor.<br><em>Una sola visión.</em></h2>
@@ -487,7 +485,7 @@ fbq('track', 'PageView');
 </section>
 
 <!-- CONCEPTUAL INTRO -->
-<section class="concept-intro">
+<section class="concept-intro" id="vision-conceptual">
   <div class="wrap concept-intro-grid">
     <div class="reveal">
       <div class="eyebrow">Visión Conceptual</div>
@@ -699,7 +697,7 @@ fbq('track', 'PageView');
 </section>
 
 <!-- INVESTMENT HIGHLIGHTS -->
-<section class="context" id="zoning">
+<section class="context" id="contexto">
   <div class="wrap">
     <div class="context-head reveal">
       <div class="eyebrow">Investment Highlights</div>
@@ -722,7 +720,7 @@ fbq('track', 'PageView');
         <h4>Ensamblaje</h4>
         <p>Tres predios bajo un mismo propietario, ofrecidos por primera vez como una sola adquisición.</p>
       </div>
-      <div class="highlight-cell">
+      <div class="highlight-cell" id="zonificacion">
         <div class="hnum">04</div>
         <h4>Contexto de Planeación</h4>
         <p>Corredor sin torres ni turismo masivo — precedente de hospitalidad boutique y residencial de baja densidad.</p>
