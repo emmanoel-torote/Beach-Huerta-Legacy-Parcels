@@ -92,7 +92,7 @@ fbq('track', 'PageView');
   }
   .hero-bg{
     position:absolute; inset:0;
-    background-image:url('./images/beach-club.jpg');
+    background-image:url('./images/beach-club-1.jpg');
     background-size:cover; background-position:center 58%;
   }
   .hero-grad{
@@ -184,10 +184,6 @@ fbq('track', 'PageView');
     background:var(--ink); display:flex; align-items:center; justify-content:center;
     text-align:center; padding:40px;
   }
-  .vcta-count{
-    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:34px;
-    color:var(--sand); margin-bottom:10px;
-  }
   .vslide-cta h4{
     font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:400; color:var(--cream);
     margin-bottom:22px;
@@ -253,10 +249,14 @@ fbq('track', 'PageView');
   .terreno-head p{font-size:14px; color:rgba(26,22,17,.55); margin-top:10px; max-width:460px;}
   .terreno-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
   .terreno-slot{
-    aspect-ratio:4/3; border:1px dashed var(--line); display:flex; flex-direction:column;
-    align-items:center; justify-content:center; gap:8px; color:rgba(26,22,17,.32);
+    aspect-ratio:4/3; position:relative; overflow:hidden; background:var(--line);
   }
-  .terreno-slot span{font-size:11px; text-transform:uppercase; letter-spacing:.1em;}
+  .terreno-slot img{width:100%; height:100%; object-fit:cover;}
+  .terreno-slot span{
+    position:absolute; left:14px; bottom:14px; z-index:2;
+    font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; font-weight:600;
+    color:var(--cream); background:rgba(26,22,17,.55); padding:5px 10px;
+  }
   @media(max-width:720px){.terreno-grid{grid-template-columns:1fr 1fr;}}
 
   /* ---------- SITE PLAN ---------- */
@@ -320,7 +320,7 @@ fbq('track', 'PageView');
   }
   .inquire-bg{
     position:absolute; inset:0;
-    background-image:url('./images/residencial.jpg');
+    background-image:url('./images/residencias-1.jpg');
     background-size:cover; background-position:center;
   }
   .inquire-grad{position:absolute; inset:0; background:rgba(26,22,17,.72);}
@@ -428,14 +428,17 @@ fbq('track', 'PageView');
   <div class="vblock">
     <div class="vimg reveal" data-carousel>
       <div class="vslide active">
-        <img src="./images/beach-club.jpg" alt="Render conceptual del Beach Club en la Parcela 01" loading="lazy">
+        <img src="./images/beach-club-1.jpg" alt="Beach Club — Parcela 01, foto 1" loading="lazy">
         <div class="vtag">Render Conceptual</div>
       </div>
+      <div class="vslide"><img src="./images/beach-club-2.jpg" alt="Beach Club — Parcela 01, foto 2" loading="lazy"></div>
+      <div class="vslide"><img src="./images/beach-club-3.jpg" alt="Beach Club — Parcela 01, foto 3" loading="lazy"></div>
+      <div class="vslide"><img src="./images/beach-club-4.jpg" alt="Beach Club — Parcela 01, foto 4" loading="lazy"></div>
+      <div class="vslide"><img src="./images/beach-club-5.jpg" alt="Beach Club — Parcela 01, foto 5" loading="lazy"></div>
       <div class="vslide vslide-cta">
         <div>
-          <div class="vcta-count">+4 fotos</div>
           <h4>Ve el expediente completo</h4>
-          <a href="#inquire" class="vcta-btn">Solicitar Fotos</a>
+          <a href="#inquire" class="vcta-btn">Solicitar Información</a>
         </div>
       </div>
       <div class="vdots"></div>
@@ -456,14 +459,18 @@ fbq('track', 'PageView');
   <div class="vblock reverse">
     <div class="vimg reveal" data-carousel>
       <div class="vslide active">
-        <img src="./images/boutique-hotel.jpg" alt="Render conceptual del hotel en la Parcela 02" loading="lazy">
+        <img src="./images/hotel-1.jpg" alt="Hotel — Parcela 02, foto 1" loading="lazy">
         <div class="vtag">Render Conceptual</div>
       </div>
+      <div class="vslide"><img src="./images/hotel-2.jpg" alt="Hotel — Parcela 02, foto 2" loading="lazy"></div>
+      <div class="vslide"><img src="./images/hotel-3.jpg" alt="Hotel — Parcela 02, foto 3" loading="lazy"></div>
+      <div class="vslide"><img src="./images/hotel-4.jpg" alt="Hotel — Parcela 02, foto 4" loading="lazy"></div>
+      <div class="vslide"><img src="./images/hotel-5.jpg" alt="Hotel — Parcela 02, foto 5" loading="lazy"></div>
+      <div class="vslide"><img src="./images/hotel-6.jpg" alt="Hotel — Parcela 02, foto 6" loading="lazy"></div>
       <div class="vslide vslide-cta">
         <div>
-          <div class="vcta-count">+5 fotos</div>
           <h4>Ve el expediente completo</h4>
-          <a href="#inquire" class="vcta-btn">Solicitar Fotos</a>
+          <a href="#inquire" class="vcta-btn">Solicitar Información</a>
         </div>
       </div>
       <div class="vdots"></div>
@@ -484,14 +491,17 @@ fbq('track', 'PageView');
   <div class="vblock">
     <div class="vimg reveal" data-carousel>
       <div class="vslide active">
-        <img src="./images/residencial.jpg" alt="Render conceptual de las residencias en la Parcela 03" loading="lazy">
+        <img src="./images/residencias-1.jpg" alt="Residencias — Parcela 03, foto 1" loading="lazy">
         <div class="vtag">Render Conceptual</div>
       </div>
+      <div class="vslide"><img src="./images/residencias-2.jpg" alt="Residencias — Parcela 03, foto 2" loading="lazy"></div>
+      <div class="vslide"><img src="./images/residencias-3.jpg" alt="Residencias — Parcela 03, foto 3" loading="lazy"></div>
+      <div class="vslide"><img src="./images/residencias-4.jpg" alt="Residencias — Parcela 03, foto 4" loading="lazy"></div>
+      <div class="vslide"><img src="./images/residencias-5.jpg" alt="Residencias — Parcela 03, foto 5" loading="lazy"></div>
       <div class="vslide vslide-cta">
         <div>
-          <div class="vcta-count">+4 fotos</div>
           <h4>Ve el expediente completo</h4>
-          <a href="#inquire" class="vcta-btn">Solicitar Fotos</a>
+          <a href="#inquire" class="vcta-btn">Solicitar Información</a>
         </div>
       </div>
       <div class="vdots"></div>
@@ -519,9 +529,9 @@ fbq('track', 'PageView');
       <p>Fotografía actual de las tres parcelas — pendiente de carga.</p>
     </div>
     <div class="terreno-grid reveal">
-      <div class="terreno-slot"><span>Parcela 01</span></div>
-      <div class="terreno-slot"><span>Parcela 02</span></div>
-      <div class="terreno-slot"><span>Parcela 03</span></div>
+      <div class="terreno-slot"><img src="./images/terreno-01.jpg" alt="Fotografía actual de la Parcela 01" loading="lazy"><span>Parcela 01</span></div>
+      <div class="terreno-slot"><img src="./images/terreno-02.jpg" alt="Fotografía actual de la Parcela 02" loading="lazy"><span>Parcela 02</span></div>
+      <div class="terreno-slot"><img src="./images/terreno-03.jpg" alt="Fotografía actual de la Parcela 03" loading="lazy"><span>Parcela 03</span></div>
     </div>
   </div>
 </section>
@@ -780,9 +790,6 @@ fbq('track', 'PageView');
     }, {passive:true});
   });
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
